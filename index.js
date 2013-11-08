@@ -1,8 +1,8 @@
 var event = require('event');
 var raf = require('raf');
 var caf = raf.cancel;
-var selected = require('bmcmahen/text-selection');
-var mod = require('bmcmahen/modifier');
+var selected = require('text-selection');
+var mod = require('modifier');
 
 var selection = window.getSelection();
 var isBound;
