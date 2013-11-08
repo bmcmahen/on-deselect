@@ -11,7 +11,8 @@ module.exports = function(el, fn){
   if (isBound) return;
   event.bind(el, 'mouseup', callback);
   event.bind(el, 'keyup', callback);
-  
+  event.bind(el, 'blur', callback);
+
   isBound = true;
 
   var id;
@@ -30,6 +31,7 @@ module.exports = function(el, fn){
   function unbind(){
     event.unbind(el, 'mouseup', callback);
     event.unbind(el, 'keyup', callback);
+    event.unbind(el, 'blur', callback);
   }
 
 };
