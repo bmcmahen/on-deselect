@@ -11,6 +11,8 @@ module.exports = function(el, fn){
   if (isBound) return;
   event.bind(el, 'mouseup', callback);
   event.bind(el, 'keyup', callback);
+  
+  isBound = true;
 
   var id;
   function callback(e){
