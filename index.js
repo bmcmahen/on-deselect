@@ -1,34 +1,24 @@
 var event = require('event');
 var raf = require('raf');
-var caf = raf.cancel;
 var selected = require('text-selection');
 var mod = require('modifier');
 
 var selection = window.getSelection();
-var isBound;
 
 module.exports = function(el, fn){
-  if (isBound) return;
   event.bind(el, 'mouseup', callback);
   event.bind(el, 'keyup', callback);
   event.bind(el, 'blur', callback);
 
-  isBound = true;
-
-  var id;
   function callback(e){
     if (mod(e)) return;
-    id = raf(function(){
-      if (!selected()) {
-        unbind();
-        isBound = false;
-        fn(e);
-      }
-      caf(id);
+    var id = raf(function(){
+      if (!selected()) fn(e);
+      raf.cancel(id);
     });
   }
 
-  function unbind(){
+  return function unbind(){
     event.unbind(el, 'mouseup', callback);
     event.unbind(el, 'keyup', callback);
     event.unbind(el, 'blur', callback);
