@@ -1,0 +1,29 @@
+{
+  "name": "on-deselect",
+  "version": "1.0.0",
+  "description": "emit an event whenever text deselection occurs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmcmahen/on-deselect.git"
+  },
+  "keywords": [
+    "range",
+    "selection",
+    "deselect"
+  ],
+  "author": "Ben McMahen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bmcmahen/on-deselect/issues"
+  },
+  "homepage": "https://github.com/bmcmahen/on-deselect",
+  "dependencies": {
+    "bmcmahen-modifier": "^1.0.0",
+    "component-event": "^0.1.4",
+    "component-raf": "^1.2.0"
+  }
+}

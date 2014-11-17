@@ -1,9 +1,25 @@
-var event = require('event');
-var raf = require('raf');
-var selected = require('text-selection');
-var mod = require('modifier');
+var event, raf, mod;
+
+try {
+  event = require('component-event');
+  raf = require('component-raf');
+  mod = require('bmcmahen-modifier');
+} catch(err) {
+  event = require('event');
+  raf = require('raf');
+  mod = require('modifier');
+}
 
 var selection = window.getSelection();
+var selected = selection.toString;
+
+/**
+ * Deselection listener
+ *
+ * @param  {Element}   el
+ * @param  {Function} fn callback
+ * @return {Function}      unbind events
+ */
 
 module.exports = function(el, fn){
   event.bind(el, 'mouseup', callback);
@@ -22,6 +38,6 @@ module.exports = function(el, fn){
     event.unbind(el, 'mouseup', callback);
     event.unbind(el, 'keyup', callback);
     event.unbind(el, 'blur', callback);
-  }
+  };
 
 };

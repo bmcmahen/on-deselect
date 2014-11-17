@@ -7,7 +7,6 @@
   "dependencies": {
     "component/event": "*",
     "component/raf": "*",
-    "bmcmahen/text-selection": "*",
     "bmcmahen/modifier": "*"
   },
   "development": {},
