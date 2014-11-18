@@ -10,9 +10,6 @@ try {
   mod = require('modifier');
 }
 
-var selection = window.getSelection();
-var selected = selection.toString;
-
 /**
  * Deselection listener
  *
@@ -29,7 +26,7 @@ module.exports = function(el, fn){
   function callback(e){
     if (mod(e)) return;
     var id = raf(function(){
-      if (!selected()) fn(e);
+      if (!window.selection().toString()) fn(e);
       raf.cancel(id);
     });
   }
