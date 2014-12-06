@@ -1,3 +1,6 @@
+## 1.0.2
+* - bind to window for more reliable deselection event
+
 ## 1.0.1
 * fix illegal invocation error
 
