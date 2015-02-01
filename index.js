@@ -27,7 +27,7 @@ module.exports = function(el, fn){
   function callback(e){
     if (mod(e)) return;
     var id = raf(function(){
-      if (!window.selection().toString()) fn(e);
+      if (!window.getSelection().toString()) fn(e);
       raf.cancel(id);
     });
   }

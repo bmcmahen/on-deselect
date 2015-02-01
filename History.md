@@ -1,3 +1,6 @@
+## 1.1.1
+* - fix silly bug that didn't correctly call window.getSelection
+
 ## 1.1.0
 * - touch support 
 
